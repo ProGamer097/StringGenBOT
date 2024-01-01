@@ -53,7 +53,7 @@ async def start(bot: Client, msg: Message):
                 ]
             ]
         ),
-        disable_web_page_preview=True,
+        disable_notification=True,
     )
 @Client.on_message(filters.private & filters.incoming)
 async def on_pm_s(client: Client, message: Message):
