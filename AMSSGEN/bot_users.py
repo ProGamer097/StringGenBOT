@@ -33,11 +33,13 @@ async def send_msg(user_id, message):
 async def broadcast(_, message):
     if not message.reply_to_message:
         await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ ɪᴛ.")
-        return    
+        return
+    
     exmsg = await message.reply_text("sᴛᴀʀᴛᴇᴅ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ!")
     all_users = await get_served_users()  # Use get_served_users directly
     done_users = 0
     failed_users = 0
+
     for user in all_users:
         try:
             await send_msg(user, message.reply_to_message)
@@ -49,9 +51,9 @@ async def broadcast(_, message):
 
     if failed_users == 0:
         await exmsg.edit_text(
-            f"**Successfully broadcasting ✅**\n\n**Sent message to**  `{done_users}` **users**",
+            f"**Successfully broadcasting ✅**\n\nSent message to `{done_users}` users",
         )
     else:
         await exmsg.edit_text(
-            f"**Successfully broadcasting ✅**\n\n**Sent message to** `{done_users}` **users**\n\n**Note:** `Due to some issues can't able to broadcast` `{failed_users}` **users.",
+            f"**Successfully broadcasting ✅**\n\nSent message to `{done_users}` users\n\n**Note:** Due to some issues, can't broadcast to `{failed_users}` users.",
         )
