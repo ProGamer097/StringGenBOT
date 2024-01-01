@@ -1,0 +1,23 @@
+{
+  "name": "𝐒𝐓𝐑𝐈𝐍𝐆 𝐁𝐎𝐓",
+  "description": "A Telegram Bot to generate Telethon and Pyrogram String Sessions.",
+  "logo": "https://graph.org/file/cf40ad848107bcdbe67c7.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "python",
+    "pyrogram"
+  ],
+    "env": { 
+        "MUST_JOIN": {
+            "description": "Username of a group or channel for which you want to set force sub.(without @)",
+            "required": true,
+           "value": "AMBOTYT"   
+        }   
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql"
+        }
+    ]
+}
