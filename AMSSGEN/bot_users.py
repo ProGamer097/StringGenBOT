@@ -50,7 +50,7 @@ async def chat_watcher_func(_, message):
         pass
 
 
-@Client.on_message(filter("stats"))
+@Client.on_message(filters.command("stats") & filters.private & filters.incoming)
 async def stats(cli: Client, message: Message):
     users = len(await get_users())
     chats = len(await get_chats())
