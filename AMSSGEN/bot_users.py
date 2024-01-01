@@ -41,7 +41,7 @@ async def broadcast(_, message):
     all_users = len(await get_served_users())
     done_users = 0
     failed_users = 0
-    for user in all_users:
+   for user in all_users:
     try:
         await send_msg(user, message.reply_to_message)
         done_users += 1
