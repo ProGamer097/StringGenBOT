@@ -31,9 +31,9 @@ def filter(cmd: str):
 async def start(bot: Client, msg: Message):
     me2 = (await bot.get_me()).mention
     await bot.send_photo(
+         chat_id=msg.chat.id,
          photo=random.choice(AM_PIC),
-        chat_id=msg.chat.id,
-        text=f"""𝘏𝘦𝘺 {msg.from_user.mention}🍷,
+         caption=f"""𝘏𝘦𝘺 {msg.from_user.mention}🍷,
 
 𝘐 𝘈𝘮 {me2},
 𝘛𝘙𝘜𝘚𝘛𝘌𝘋 𝘚𝘛𝘙𝘐𝘕𝘎 𝘎𝘌𝘕𝘌𝘙𝘈𝘛𝘖𝘙
