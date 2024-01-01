@@ -49,11 +49,12 @@ async def broadcast(_, message):
         except Exception:
             pass
             failed_users += 1
-    if failed_users == 0 and failed_chats == 0:
+        if failed_users == 0:
         await exmsg.edit_text(
-            f"**sᴜᴄᴄᴇssғᴜʟʟʏ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ✅**\n\n**sᴇɴᴛ ᴍᴇssᴀɢᴇ ᴛᴏ**  `{done_users}` **ᴜsᴇʀs**",
+            f"**Successfully broadcasting ✅**\n\n**Sent message to**  `{done_users}` **users**",
         )
     else:
         await exmsg.edit_text(
-            f"**sᴜᴄᴄᴇssғᴜʟʟʏ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ✅**\n\n**sᴇɴᴛ ᴍᴇssᴀɢᴇ ᴛᴏ** `{done_users}` **ᴜsᴇʀs**\n\n**ɴᴏᴛᴇ:-** `ᴅᴜᴇ ᴛᴏ sᴏᴍᴇ ɪssᴜᴇ ᴄᴀɴ'ᴛ ᴀʙʟᴇ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ` `{failed_users}` **ᴜsᴇʀs.",
+            f"**Successfully broadcasting ✅**\n\n**Sent message to** `{done_users}` **users**\n\n**Note:** `Due to some issues can't able to broadcast` `{failed_users}` **users.",
         )
+
