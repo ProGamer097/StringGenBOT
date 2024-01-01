@@ -30,7 +30,7 @@ def filter(cmd: str):
 @Client.on_message(filter("start"))
 async def start(bot: Client, msg: Message):
     me2 = (await bot.get_me()).mention
-    await bot.reply_photo(
+    await bot.send_photo(
          photo=random.choice(AM_PIC),
         chat_id=msg.chat.id,
         text=f"""𝘏𝘦𝘺 {msg.from_user.mention}🍷,
