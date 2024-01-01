@@ -42,19 +42,19 @@ async def broadcast(_, message):
     done_users = 0
     failed_users = 0
     for user in all_users:
-        try:
-            await send_msg(user, message.reply_to_message)
-            done_users += 1
-            await asyncio.sleep(0.1)
-        except Exception:
-            pass
-            failed_users += 1
-        if failed_users == 0:
-        await exmsg.edit_text(
-            f"**Successfully broadcasting ✅**\n\n**Sent message to**  `{done_users}` **users**",
-        )
-    else:
-        await exmsg.edit_text(
-            f"**Successfully broadcasting ✅**\n\n**Sent message to** `{done_users}` **users**\n\n**Note:** `Due to some issues can't able to broadcast` `{failed_users}` **users.",
-        )
+    try:
+        await send_msg(user, message.reply_to_message)
+        done_users += 1
+        await asyncio.sleep(0.1)
+    except Exception:
+        pass
+        failed_users += 1
 
+if failed_users == 0:
+    await exmsg.edit_text(
+        f"**Successfully broadcasting ✅**\n\n**Sent message to**  `{done_users}` **users**",
+    )
+else:
+    await exmsg.edit_text(
+        f"**Successfully broadcasting ✅**\n\n**Sent message to** `{done_users}` **users**\n\n**Note:** `Due to some issues can't able to broadcast` `{failed_users}` **users.",
+    )
