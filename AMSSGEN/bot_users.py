@@ -35,7 +35,7 @@ async def broadcast(_, message):
         await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ ɪᴛ.")
         return    
     exmsg = await message.reply_text("sᴛᴀʀᴛᴇᴅ ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ!")
-    all_users = len(await get_served_users())
+    all_users = await get_served_users()  # Use get_served_users directly
     done_users = 0
     failed_users = 0
     for user in all_users:
