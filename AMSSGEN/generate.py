@@ -75,7 +75,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " 𝐵𝑂𝑇"
     await msg.reply(f"» 𝑇𝑅𝑌𝐼𝑁𝐺 𝑇𝑂 𝑆𝑇𝐴𝑅𝑇 **{ty}** 𝑆𝐸𝑆𝑆𝐼𝑂𝑁 𝐺𝐸𝑁𝐸𝑅𝐴𝑇𝑂𝑅...")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "𝑃𝐿𝐸𝐴𝑆𝐸 𝑆𝐸𝑁𝐷 𝑌𝑂𝑈 **𝐴𝑃𝐼_𝐼𝐷** 𝑇𝑂 𝑃𝑅𝑂𝐷𝑈𝐶𝐸𝐷.\n\n 𝐶𝐿𝐼𝐶𝐾 𝑂𝑁 /skip 𝐹𝑂𝑅 𝑈𝑆𝐼𝑁𝐺 𝐵𝑂𝑇 𝐴𝑃𝐼.", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "𝑃𝐿𝐸𝐴𝑆𝐸 𝑆𝐸𝑁𝐷 𝑌𝑂𝑈 **𝐴𝑃𝐼_𝐼𝐷** 𝑇𝑂 𝑃𝑅𝑂𝐷𝑈𝐶𝐸𝐷.\n\n 𝐶𝐿𝐼𝐶𝐾 𝑂𝑁 /skip 𝐹𝑂𝑅 𝑈𝑆𝐼𝑁𝐺 𝐵𝑂𝑇 𝐴𝑃𝐼.\n\n 𝐴𝑃𝐼.`27733303`", filters=filters.text)
     if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "/skip":
@@ -87,7 +87,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         except ValueError:
             await api_id_msg.reply("**𝐴𝑃𝐼_𝐼𝐷** 𝑀𝑈𝑆𝑇 𝐵𝐸 𝐼𝑁𝑇𝐸𝐺𝐸𝑅, 𝑆𝑇𝐴𝑅𝑇 𝐺𝐸𝑁𝐸𝑅𝐴𝑇𝐼𝑁𝐺 𝑌𝑂𝑈𝑅 𝑆𝐸𝑆𝑆𝐼𝑂𝑁 𝐴𝐺𝐴𝐼𝑁.", quote=True, reply_markup=InlineKeyboardMarkup(gen_button))
             return
-        api_hash_msg = await bot.ask(user_id, "» 𝑁𝑂𝑊 𝑃𝐿𝐸𝐴𝑆𝐸 𝑆𝐸𝑁𝐷 𝑌𝑂𝑈𝑅 **𝐴𝑃𝐼_𝐻𝐴𝑆𝐻** 𝑇𝑂 𝐶𝑂𝑁𝑇𝐼𝑁𝑈𝐸", filters=filters.text)
+        api_hash_msg = await bot.ask(user_id, "» 𝑁𝑂𝑊 𝑃𝐿𝐸𝐴𝑆𝐸 𝑆𝐸𝑁𝐷 𝑌𝑂𝑈𝑅 **𝐴𝑃𝐼_𝐻𝐴𝑆𝐻** 𝑇𝑂 𝐶𝑂𝑁𝑇𝐼𝑁𝑈𝐸\n\n𝐻𝐴𝑆𝐻 1. `c3c9d5e5d89c99fb8bb85a22a0cb5a26`", filters=filters.text)
         if await cancelled(api_hash_msg):
             return
         api_hash = api_hash_msg.text
