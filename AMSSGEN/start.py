@@ -32,7 +32,7 @@ async def start(bot: Client, msg: Message):
     me2 = (await bot.get_me()).mention
     await bot.send_photo(
          chat_id=msg.chat.id,
-         photo=random.choice(Naruto_PIC),
+         photo=random.choice(AM_PIC),
          caption=f"""𝘏𝘦𝘺 {msg.from_user.mention}🍷,
 
 𝘐 𝘈𝘮 {me2},
