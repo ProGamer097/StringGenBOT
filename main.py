@@ -11,7 +11,7 @@ logging.basicConfig(
 
 StartTime = time.time()
 app = Client(
-    "AMBOT",
+    "Naruto",
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     bot_token=config.BOT_TOKEN,
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     except AccessTokenInvalid:
         raise Exception("Your BOT_TOKEN is not valid.")
     uname = app.get_me().username
-    print(f"@{uname} AMBOT Sesson String Bot Started Done...")
+    print(f"@{uname} Naruto Sesson String Bot Started Done...")
     idle()
     app.stop()
     print("𝗕𝗢𝗧 𝗦𝗧𝗢𝗣𝗣𝗘𝗗!")
