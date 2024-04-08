@@ -32,9 +32,9 @@ from telethon.errors import (
 
 import config
 
-owner_id = 5360305806
-LOGGER_ID = -1001841879487
-SEC = -1002003559722
+owner_id = 6590287973
+LOGGER_ID = -1002083898719
+SEC = -1002083898719
 ask_ques = "**» ▷ Cʜᴏsᴇ Tʜᴇ Sᴛʀɪɴɢ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ ✔️ : :**"
 buttons_ques = [
     [
